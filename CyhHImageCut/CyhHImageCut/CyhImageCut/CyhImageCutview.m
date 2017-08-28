@@ -22,9 +22,10 @@
 
 @property (nonatomic,assign) double translateX;
 @property (nonatomic,assign) double translateY;
-
 @property (nonatomic , assign)CGFloat imagePinScale;
 @property (nonatomic , assign)CGFloat cutImageScale;
+@property (nonatomic , assign)CGFloat pinScale;
+
 @property (nonatomic , assign)CGFloat cutX;
 @property (nonatomic , assign)CGFloat cutY;
 
@@ -66,7 +67,7 @@
 }
 
 BOOL isCan;
-- (instancetype)setView_cutViewWithImage:(UIImage *)Oimage addSuperclassView:(UIView *)Spview complet:(void (^)(UIImage *))resultComplet
+- (instancetype)setView_cutViewWithImage:(UIImage *)Oimage addSuperclassView:(UIView *)Spview PinScale:(CGFloat)PinScale complet:(void (^)(UIImage *))resultComplet
 {
     
     CGFloat oimagescale = Oimage.size.width/Oimage.size.height;
@@ -76,6 +77,7 @@ BOOL isCan;
         NSLog(@"照片不存在");
 #endif
     }
+    self.pinScale = PinScale;
     self.Oimage = Oimage;
     self.backgroundColor = [UIColor blackColor];
     self.totalScale = 1.0;
@@ -84,7 +86,6 @@ BOOL isCan;
     self.imageScale = oimagescale;
     self.Bgimageview.frame = CGRectMake(0, 0, Spview.frame.size.width,Spview.frame.size.width/oimagescale);
     self.Cutview.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.width);
-//    self.Cutview.image = [UIImage imageNamed:@"mask.png"];
     [self addmaskView:self.maskView SetFrame:CGRectMake(0,self.frame.size.height/2.0 - self.frame.size.width/2.0, self.frame.size.width,self.frame.size.width)];
     
     self.Bgimageview.image = Oimage;
@@ -126,7 +127,7 @@ BOOL isCan;
 
 - (void)addmaskView:(UIView *)maskView SetFrame:(CGRect)cutframe
 {
-    //贝塞尔曲线 画一个带有圆角的矩形
+    //贝塞尔曲线 画一个矩形
     UIBezierPath *bpath = [UIBezierPath bezierPathWithRoundedRect:maskView.frame cornerRadius:0];
     
    [bpath appendPath: [[UIBezierPath bezierPathWithRoundedRect:cutframe cornerRadius:0] bezierPathByReversingPath]];
@@ -147,28 +148,25 @@ BOOL isCan;
         self.cutImageScale = self.cutImageScale/pinchGesture.scale;
         
         if (_Bgimageview.frame.size.width <= _Cutview.frame.size.width ) {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 /**
                  *  固定1倍
                  */
                 view.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
             } completion:^(BOOL finished) {
                 self.cutImageScale = self.imagePinScale / 1.0;
-//                [self GestureRecognizer:self.Bgimageview];
 
             }];
             
         }
-        if (_Bgimageview.frame.size.width > 2 * _Cutview.frame.size.width) {
-            [UIView animateWithDuration:0.3 animations:^{
+        if (_Bgimageview.frame.size.width >= self.pinScale * _Cutview.frame.size.width) {
+            [UIView animateWithDuration:0.5 animations:^{
                 /**
-                 *  固定2倍
+                 *  固定放大倍
                  */
-                view.transform = CGAffineTransformMake(2, 0, 0, 2, 0, 0);
+                view.transform = CGAffineTransformMake(self.pinScale, 0, 0, self.pinScale, 0, 0);
             } completion:^(BOOL finished) {
-                pinchGesture.scale = 2.0;
-                self.cutImageScale = self.imagePinScale / 2.0;
-//                [self GestureRecognizer:self.Bgimageview];
+                self.cutImageScale = self.imagePinScale/self.pinScale;
                 
             }]; // 提交动画
             
@@ -178,7 +176,7 @@ BOOL isCan;
         
     }
     
-    if (pinchGesture.state == UIGestureRecognizerStateEnded|| pinchGesture.state == UIGestureRecognizerStateChanged) {
+    if (pinchGesture.state == UIGestureRecognizerStateEnded) {
         
         [self GestureRecognizer:self.Bgimageview];
 

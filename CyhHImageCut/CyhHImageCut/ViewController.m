@@ -23,7 +23,7 @@
     
     __weak typeof(&*self) weakSelf = self;
     self.ImageCutview = [[CyhImageCutview alloc] init];
-  UIView * view = [self.ImageCutview setView_cutViewWithImage:[UIImage imageNamed:@"01.jpg"] addSuperclassView:self.view complet:^(UIImage *Cutimage) {
+  UIView * view = [self.ImageCutview setView_cutViewWithImage:[UIImage imageNamed:@"01.jpg"] addSuperclassView:self.view PinScale:3.0 complet:^(UIImage *Cutimage) {
       
       weakSelf.cutimage = Cutimage;
       NSLog(@"新图片：%@",Cutimage);
