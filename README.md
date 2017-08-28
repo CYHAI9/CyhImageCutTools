@@ -15,6 +15,7 @@ pod 'CyhimageCutTool'
         [weakSelf.navigationController pushViewController:vc02 animated:YES];
         
        }];
+       
       
 裁剪响应事件
    
