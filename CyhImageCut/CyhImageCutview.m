@@ -58,7 +58,7 @@
     if (!_maskView) {
         _maskView = [[UIView alloc] initWithFrame:CGRectZero];
         _maskView.backgroundColor= [UIColor blackColor];
-        _maskView.alpha= 0.5;
+        _maskView.alpha= 0.7;
     }
     return _maskView;
 }
@@ -143,7 +143,6 @@ BOOL isCan;
     if (pinchGesture.state == UIGestureRecognizerStateBegan || pinchGesture.state == UIGestureRecognizerStateChanged) {
         view.transform = CGAffineTransformScale(view.transform, pinchGesture.scale, pinchGesture.scale);
         self.cutImageScale = self.cutImageScale/pinchGesture.scale;
-        NSLog(@"Scale=====%lf",self.cutImageScale);
         
         if (_Bgimageview.frame.size.width <= _Cutview.frame.size.width ) {
             [UIView animateWithDuration:0.3 animations:^{
@@ -325,7 +324,6 @@ BOOL isCan;
         self.cutY = minY - self.Bgimageview.frame.origin.y;
     }
     
-//    NSLog(@"%lf===%lf",self.Bgimageview.frame.origin.x,self.Bgimageview.frame.origin.y);
 }
 
 - (void)sureCutImage
