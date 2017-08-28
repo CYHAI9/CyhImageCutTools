@@ -48,6 +48,8 @@
 {
     if (!_Cutview) {
         _Cutview = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _Cutview.layer.borderWidth = 1.0;
+        _Cutview.layer.borderColor = [[UIColor whiteColor] CGColor];
     }
     
     return _Cutview;
@@ -82,7 +84,7 @@ BOOL isCan;
     self.imageScale = oimagescale;
     self.Bgimageview.frame = CGRectMake(0, 0, Spview.frame.size.width,Spview.frame.size.width/oimagescale);
     self.Cutview.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.width);
-    self.Cutview.image = [UIImage imageNamed:@"mask.png"];
+//    self.Cutview.image = [UIImage imageNamed:@"mask.png"];
     [self addmaskView:self.maskView SetFrame:CGRectMake(0,self.frame.size.height/2.0 - self.frame.size.width/2.0, self.frame.size.width,self.frame.size.width)];
     
     self.Bgimageview.image = Oimage;

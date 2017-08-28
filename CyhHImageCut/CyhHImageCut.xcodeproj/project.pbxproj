@@ -19,7 +19,6 @@
 		3285519E1F4D743A00D48E86 /* CyhImageCutview.m in Sources */ = {isa = PBXBuildFile; fileRef = 3285519D1F4D743A00D48E86 /* CyhImageCutview.m */; };
 		328551A01F4E690500D48E86 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3285519F1F4E690500D48E86 /* 02.jpg */; };
 		328551A71F4E6C8B00D48E86 /* ViewController02.m in Sources */ = {isa = PBXBuildFile; fileRef = 328551A61F4E6C8B00D48E86 /* ViewController02.m */; };
-		328551AB1F53EE0800D48E86 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 328551AA1F53EE0800D48E86 /* mask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		3285519F1F4E690500D48E86 /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
 		328551A51F4E6C8B00D48E86 /* ViewController02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController02.h; sourceTree = "<group>"; };
 		328551A61F4E6C8B00D48E86 /* ViewController02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController02.m; sourceTree = "<group>"; };
-		328551AA1F53EE0800D48E86 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 		3285518D1F4D555200D48E86 /* CyhImageCut */ = {
 			isa = PBXGroup;
 			children = (
-				328551AA1F53EE0800D48E86 /* mask.png */,
 				328551961F4D563200D48E86 /* CyhImageCutTool.h */,
 				328551971F4D563200D48E86 /* CyhImageCutTool.m */,
 				3285519C1F4D743A00D48E86 /* CyhImageCutview.h */,
@@ -173,7 +170,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				328551AB1F53EE0800D48E86 /* mask.png in Resources */,
 				328551951F4D55FA00D48E86 /* 03.png in Resources */,
 				328551A01F4E690500D48E86 /* 02.jpg in Resources */,
 				328551861F4D54E300D48E86 /* LaunchScreen.storyboard in Resources */,
