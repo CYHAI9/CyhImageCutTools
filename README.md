@@ -19,5 +19,6 @@ pod 'CyhimageCutTool'
       
 裁剪响应事件
    
-       [self.ImageCutview sureCutImage];
+      
+      [self.ImageCutview sureCutImage];
        
