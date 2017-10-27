@@ -19,6 +19,10 @@
 		3285519E1F4D743A00D48E86 /* CyhImageCutview.m in Sources */ = {isa = PBXBuildFile; fileRef = 3285519D1F4D743A00D48E86 /* CyhImageCutview.m */; };
 		328551A01F4E690500D48E86 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3285519F1F4E690500D48E86 /* 02.jpg */; };
 		328551A71F4E6C8B00D48E86 /* ViewController02.m in Sources */ = {isa = PBXBuildFile; fileRef = 328551A61F4E6C8B00D48E86 /* ViewController02.m */; };
+		32C6275B1F7254FE002B8A95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C6275A1F7254FE002B8A95 /* SystemConfiguration.framework */; };
+		32C6275F1F74AD20002B8A95 /* photoPickupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6275E1F74AD20002B8A95 /* photoPickupVC.m */; };
+		32C627631F74AE8B002B8A95 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C627621F74AE8B002B8A95 /* PhotoCell.m */; };
+		32EADA961F75115600473BC5 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EADA951F75115600473BC5 /* AlbumViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,13 @@
 		3285519F1F4E690500D48E86 /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
 		328551A51F4E6C8B00D48E86 /* ViewController02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController02.h; sourceTree = "<group>"; };
 		328551A61F4E6C8B00D48E86 /* ViewController02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController02.m; sourceTree = "<group>"; };
+		32C6275A1F7254FE002B8A95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		32C6275D1F74AD20002B8A95 /* photoPickupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = photoPickupVC.h; sourceTree = "<group>"; };
+		32C6275E1F74AD20002B8A95 /* photoPickupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photoPickupVC.m; sourceTree = "<group>"; };
+		32C627611F74AE8B002B8A95 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		32C627621F74AE8B002B8A95 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		32EADA941F75115600473BC5 /* AlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		32EADA951F75115600473BC5 /* AlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C6275B1F7254FE002B8A95 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +71,7 @@
 			children = (
 				328551751F4D54E300D48E86 /* CyhHImageCut */,
 				328551741F4D54E300D48E86 /* Products */,
+				32C627591F7254FD002B8A95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +89,7 @@
 				3285519F1F4E690500D48E86 /* 02.jpg */,
 				328551921F4D55FA00D48E86 /* 01.jpg */,
 				328551931F4D55FA00D48E86 /* 03.png */,
+				32C6275C1F74ACC1002B8A95 /* PhotoPickup */,
 				3285518D1F4D555200D48E86 /* CyhImageCut */,
 				328551791F4D54E300D48E86 /* AppDelegate.h */,
 				3285517A1F4D54E300D48E86 /* AppDelegate.m */,
@@ -109,6 +123,35 @@
 				3285519D1F4D743A00D48E86 /* CyhImageCutview.m */,
 			);
 			path = CyhImageCut;
+			sourceTree = "<group>";
+		};
+		32C627591F7254FD002B8A95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32C6275A1F7254FE002B8A95 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32C6275C1F74ACC1002B8A95 /* PhotoPickup */ = {
+			isa = PBXGroup;
+			children = (
+				32C627601F74AE54002B8A95 /* View */,
+				32C6275D1F74AD20002B8A95 /* photoPickupVC.h */,
+				32C6275E1F74AD20002B8A95 /* photoPickupVC.m */,
+				32EADA941F75115600473BC5 /* AlbumViewController.h */,
+				32EADA951F75115600473BC5 /* AlbumViewController.m */,
+			);
+			path = PhotoPickup;
+			sourceTree = "<group>";
+		};
+		32C627601F74AE54002B8A95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32C627611F74AE8B002B8A95 /* PhotoCell.h */,
+				32C627621F74AE8B002B8A95 /* PhotoCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C627631F74AE8B002B8A95 /* PhotoCell.m in Sources */,
 				328551A71F4E6C8B00D48E86 /* ViewController02.m in Sources */,
+				32EADA961F75115600473BC5 /* AlbumViewController.m in Sources */,
 				3285517E1F4D54E300D48E86 /* ViewController.m in Sources */,
 				328551981F4D563200D48E86 /* CyhImageCutTool.m in Sources */,
 				3285519E1F4D743A00D48E86 /* CyhImageCutview.m in Sources */,
 				3285517B1F4D54E300D48E86 /* AppDelegate.m in Sources */,
+				32C6275F1F74AD20002B8A95 /* photoPickupVC.m in Sources */,
 				328551781F4D54E300D48E86 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4R7VBTTL9Z;
 				INFOPLIST_FILE = CyhHImageCut/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cyhai.CyhHImageCut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,6 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4R7VBTTL9Z;
 				INFOPLIST_FILE = CyhHImageCut/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cyhai.CyhHImageCut;
 				PRODUCT_NAME = "$(TARGET_NAME)";

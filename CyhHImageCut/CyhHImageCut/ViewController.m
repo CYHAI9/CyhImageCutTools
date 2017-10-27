@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "CyhImageCutview.h"
 #import "ViewController02.h"
-@interface ViewController ()
+#import "photoPickupVC.h"
+@interface ViewController ()<photoPickupVCDelegate>
 
 @property (nonatomic , strong)UIImage * cutimage;
 @property (nonatomic , strong) CyhImageCutview * ImageCutview;
@@ -36,13 +37,22 @@
     
     
 }
+- (IBAction)pickImage:(id)sender {
+    photoPickupVC * pvc = [photoPickupVC new];
+    pvc.photoPdelegate = self;
+    [self.navigationController pushViewController:pvc animated:YES];
+    
+}
+
+- (void)photoPickImage:(UIImage *)photo
+{
+    self.ImageCutview.NewOimage = photo;
+}
+
 - (IBAction)ToVc2:(id)sender {
     
-    
     [self.ImageCutview sureCutImage];
-    
-    
-    
+  
 }
 
 - (void)didReceiveMemoryWarning {

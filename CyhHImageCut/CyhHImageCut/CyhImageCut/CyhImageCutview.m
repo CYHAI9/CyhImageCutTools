@@ -31,6 +31,9 @@
 
 @property (nonatomic , copy)void(^cutCompletBL)(UIImage * newimage);
 
+@property (nonatomic , strong)UIView * SPview;
+@property (nonatomic , assign)CGFloat Pscale;
+
 @end
 
 @implementation CyhImageCutview
@@ -69,7 +72,8 @@
 BOOL isCan;
 - (instancetype)setView_cutViewWithImage:(UIImage *)Oimage addSuperclassView:(UIView *)Spview PinScale:(CGFloat)PinScale complet:(void (^)(UIImage *))resultComplet
 {
-    
+    self.SPview = Spview;
+    self.Pscale = PinScale;
     CGFloat oimagescale = Oimage.size.width/Oimage.size.height;
     if (!Oimage) {
         oimagescale = 1.0;
@@ -346,5 +350,10 @@ BOOL isCan;
   
 }
 
+- (void)setNewOimage:(UIImage *)NewOimage
+{
+    _NewOimage = NewOimage;
+    [self setView_cutViewWithImage:NewOimage addSuperclassView:self.SPview PinScale:self.Pscale complet:self.cutCompletBL];
+}
 
 @end

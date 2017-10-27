@@ -11,7 +11,8 @@
 @interface CyhImageCutview : UIView
 
 - (instancetype)setView_cutViewWithImage:(UIImage *)Oimage addSuperclassView:(UIView *)Spview PinScale:(CGFloat)PinScale complet:(void (^)(UIImage * Cutimage))resultComplet;
-
 - (void)sureCutImage;
+
+@property (nonatomic , strong)UIImage * NewOimage;
 
 @end
