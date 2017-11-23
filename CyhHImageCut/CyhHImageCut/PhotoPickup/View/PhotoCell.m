@@ -39,7 +39,8 @@
 {
     [self.contentView addSubview:self.photoImageview];
     self.photoImageview.frame = self.contentView.frame;
-    _photoImageview.contentMode = UIViewContentModeTop|UIViewContentModeBottom|UIViewContentModeLeft|UIViewContentModeRight;
+    _photoImageview.contentMode = UIViewContentModeScaleAspectFill;
+    _photoImageview.clipsToBounds = YES;
 }
 
 - (UIImage *)photoImage

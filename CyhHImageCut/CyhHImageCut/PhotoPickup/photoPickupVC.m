@@ -121,16 +121,7 @@
     //遍历
     for (PHAsset *asset in assets) {
         [self.ImageAsset addObject:asset];
-        //取出图片
-//        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-//
-//            [self.images addObject:result];
-//
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.photoCollectionView reloadData];
-//            });
-//
-//        }];
+     
     }
 }
 

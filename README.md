@@ -12,8 +12,7 @@ pod 'CyhimageCutTool'
       UIView * view = [self.ImageCutview setView_cutViewWithImage:[UIImage imageNamed:@"SH02.png"] addSuperclassView:self.view 
       ```
      
- ```
-     PinScale:2.0 complet:^(UIImage *Cutimage) {
+``` PinScale:2.0 complet:^(UIImage *Cutimage) {
        
        weakSelf.cutimage = Cutimage;
        
@@ -25,12 +24,10 @@ pod 'CyhimageCutTool'
        
        [weakSelf.navigationController pushViewController:vc02 animated:YES];
        
-         }];
-   ```
+         }];```
    
 裁剪响应事件
-```
-     [self.ImageCutview sureCutImage];
-   ```
+`   [self.ImageCutview sureCutImage]; `
+   
    ![](https://github.com/CYHAI9/CyhImageCutTools/blob/master/IMG_4408.PNG)  
        
