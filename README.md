@@ -26,8 +26,9 @@ PinScale:2.0 complet:^(UIImage *Cutimage) {
        [weakSelf.navigationController pushViewController:vc02 animated:YES];
        
          }];
-   
+ ```  
 裁剪响应事件
+``
 [self.ImageCutview sureCutImage];
-   
+``   
 ![](https://github.com/CYHAI9/CyhImageCutTools/blob/master/IMG_4408.PNG)       
